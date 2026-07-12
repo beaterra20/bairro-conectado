@@ -1,0 +1,108 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f0e8;
+    color: #173f2a;
+    padding: 24px;
+}
+
+.cabecalho-cadastro {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+.btn-voltar {
+    width: 36px;
+    height: 36px;
+    border: none;
+    border-radius: 50%;
+    background-color: #e5decd;
+    cursor: pointer;
+}
+
+.cabecalho-cadastro h1 {
+    font-size: 18px;
+}
+
+.card-dados-pessoais {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background-color: #dfe9d8;
+    border: 1px solid #c8d5c0;
+    border-radius: 14px;
+    padding: 14px;
+    margin-bottom: 24px;
+}
+
+.icone-dados {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: #0f6b3a;
+}
+
+.texto-dados h2 {
+    font-size: 14px;
+}
+
+.texto-dados p {
+    font-size: 12px;
+    color: #6b7168;
+}
+
+#form-cadastro {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.campo-formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.campo-formulario label {
+    font-size: 12px;
+    font-weight: bold;
+    color: #6b7168;
+}
+
+.campo-formulario input {
+    padding: 16px;
+    border: none;
+    border-radius: 16px;
+    background-color: white;
+    font-size: 14px;
+}
+
+.btn-continuar,
+.btn-criar-conta {
+    padding: 16px;
+    border: none;
+    border-radius: 14px;
+    background-color: #e5decd;
+    color: #5d584e;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.requisitos-senha {
+    padding-left: 20px;
+    color: #6b7168;
+    font-size: 13px;
+}
+
+.etapa-senha {
+    display: none;
+    flex-direction: column;
+    gap: 16px;
+}

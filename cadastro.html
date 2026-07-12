@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avisaí - Cadastro</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+<header class="cabecalho-cadastro">
+
+        <button class="btn-voltar" type="button">
+            ←
+        </button>
+
+        <h1>Criar conta</h1>
+
+    </header>
+
+    <div id="dados-cadastro">
+
+    <section class="card-dados-pessoais">
+
+    <div class="icone-dados"></div>
+
+    <div class="texto-dados">
+        <h2>Dados pessoais</h2>
+        <p>Como você será identificado no bairro</p>
+    </div>
+
+</section>
+<form id="form-cadastro">
+<div class="campo-formulario">
+
+    <label for="nome">NOME</label>
+
+    <input
+        type="text"
+        id="nome"
+        name="nome"
+        placeholder="Ex: Maria"
+        required
+    >
+</div>
+<div class="campo-formulario">
+<label for="sobrenome">SOBRENOME</label>
+
+    <input
+        type="text"
+        id="sobrenome"
+        name="sobrenome"
+        placeholder="Ex: Silva"
+        required
+    >
+</div>
+<div class="campo-formulario">
+    <label for="cep">CEP</label>
+    <input
+        type="text"
+        id="cep"
+        name="cep"
+        placeholder="22200-000"
+        required
+    >
+</div>
+<div class="campo-formulario">
+    <label for="email">E-MAIL</label>
+
+<input
+    type="email"
+    id="email"
+    name="email"
+    placeholder="seu@email.com"
+    required
+>
+</div>
+<button
+    type="button"
+    class="btn-continuar"
+    id="btn-continuar"
+>
+    Continuar
+</button>
+
+</div>
+
+<section class="etapa-senha" id="etapa-senha">
+
+    <div class="campo-formulario">
+        <label for="senha">SENHA</label>
+
+        <input
+            type="password"
+            id="senha"
+            name="senha"
+            placeholder="Crie uma senha"
+            required
+        >
+    </div>
+
+    <ul class="requisitos-senha">
+        <li id="req-tamanho">Mínimo de 8 caracteres</li>
+        <li id="req-maiuscula">Pelo menos 1 letra maiúscula</li>
+        <li id="req-numero">Pelo menos 1 número</li>
+        <li id="req-especial">Pelo menos 1 caractere especial</li>
+    </ul>
+
+    <div class="campo-formulario">
+        <label for="confirmar-senha">CONFIRMAR SENHA</label>
+
+        <input
+            type="password"
+            id="confirmar-senha"
+            name="confirmar-senha"
+            placeholder="Confirme sua senha"
+            required
+        >
+    </div>
+
+    <button
+        type="submit"
+        class="btn-criar-conta"
+    >
+        Criar conta
+    </button>
+
+</section>
+</form>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/supabase.js"></script>
+<script src="js/cadastro.js"></script>
+
+</body>
+</html>
+

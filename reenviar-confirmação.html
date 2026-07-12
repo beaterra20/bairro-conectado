@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reenviar confirmação | Avisaí</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <main class="pagina-reenvio">
+
+        <h1>Reenviar e-mail de confirmação</h1>
+
+        <p>
+            Informe o e-mail usado no cadastro para receber um novo link.
+        </p>
+
+        <form id="form-reenvio">
+
+            <div class="campo-formulario">
+                <label for="email-reenvio">E-MAIL</label>
+
+                <input
+                    type="email"
+                    id="email-reenvio"
+                    name="email-reenvio"
+                    placeholder="seu@email.com"
+                    required
+                >
+            </div>
+
+            <button
+                type="submit"
+                class="btn-continuar"
+            >
+                Reenviar e-mail
+            </button>
+
+        </form>
+
+        <p id="mensagem-reenvio"></p>
+
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/supabase.js"></script>
+    <script src="js/reenviar-confirmação.js"></script>
+
+</body>
+</html>
