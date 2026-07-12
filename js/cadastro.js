@@ -88,7 +88,7 @@ formCadastro.addEventListener("submit", async function (event) {
     password: senha,
     options: {
         emailRedirectTo:
-            "http://127.0.0.1:5500/confirmação-conta.html",
+            "https://beaterra20.github.io/avisai/confirmação-conta.html",
 
         data: {
             nome,
