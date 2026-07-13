@@ -11,9 +11,13 @@
 <body>
 <header class="cabecalho-cadastro">
 
-        <button class="btn-voltar" type="button">
-            ←
-        </button>
+        <button
+    type="button"
+    id="btn-voltar-senha"
+    class="btn-voltar"
+>
+    ←
+</button>
 
         <h1>Criar conta</h1>
 
@@ -32,47 +36,56 @@
 
 </section>
 <form id="form-cadastro">
+ <div id="mensagem" class="mensagem-erro"></div>
 <div class="campo-formulario">
 
-    <label for="nome">NOME</label>
+    <label for="nome">
+    NOME <span class="obrigatorio">*</span>
+</label>
+
 
     <input
         type="text"
         id="nome"
         name="nome"
-        placeholder="Ex: Maria"
+        placeholder="Digite seu nome"
         required
     >
 </div>
 <div class="campo-formulario">
-<label for="sobrenome">SOBRENOME</label>
-
+<label for="sobrenome">
+    SOBRENOME <span class="obrigatorio">*</span>
+</label>
     <input
         type="text"
         id="sobrenome"
         name="sobrenome"
-        placeholder="Ex: Silva"
+        placeholder="Digite seu sobrenome"
         required
     >
 </div>
 <div class="campo-formulario">
-    <label for="cep">CEP</label>
+    <label for="cep">
+    CEP <span class="obrigatorio">*</span>
+</label>
     <input
         type="text"
         id="cep"
         name="cep"
-        placeholder="22200-000"
+        placeholder="00000-000"
         required
     >
 </div>
 <div class="campo-formulario">
-    <label for="email">E-MAIL</label>
+    <label for="email">
+    E-MAIL <span class="obrigatorio">*</span>
+</label>
 
 <input
     type="email"
     id="email"
     name="email"
-    placeholder="seu@email.com"
+    placeholder="Digite seu e-mail"
     required
 >
 </div>
@@ -90,6 +103,10 @@
 
     <div class="campo-formulario">
         <label for="senha">SENHA</label>
+
+        <p class="texto-ajuda">
+Sua senha deve atender aos requisitos abaixo.
+</p>
 
         <input
             type="password"

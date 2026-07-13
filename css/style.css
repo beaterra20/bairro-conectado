@@ -86,13 +86,12 @@ body {
 
 .btn-continuar,
 .btn-criar-conta {
-    padding: 16px;
-    border: none;
-    border-radius: 14px;
-    background-color: #e5decd;
-    color: #5d584e;
-    font-weight: bold;
-    cursor: pointer;
+    width:100%;
+height:56px;
+border-radius:16px;
+font-size:18px;
+font-weight:600;
+transition:.3s;
 }
 
 .requisitos-senha {
@@ -105,4 +104,42 @@ body {
     display: none;
     flex-direction: column;
     gap: 16px;
+}
+
+.obrigatorio{
+    color:#D32F2F;
+    font-weight:600;
+}
+
+.texto-ajuda{
+   color:#6B7280;
+    font-size:14px;
+    margin-top:6px;
+    margin-bottom:18px;
+}
+
+.requisitos-senha{
+   margin:18px 0 24px;
+    padding-left:22px;
+    color:#6B7280;
+    font-size:15px;
+    line-height:1.8;
+    margin-bottom:30px;
+}
+
+.btn-criar-conta:disabled{
+    opacity:.5;
+    cursor:not-allowed;
+}
+
+.mensagem-erro{
+    display:none;
+    background:#FDECEC;
+    color:#B42318;
+    border:1px solid #F5C2C7;
+    border-radius:10px;
+    padding:12px;
+    margin-bottom:18px;
+    font-size:14px;
+    font-weight:500;
 }

@@ -3,6 +3,14 @@ const dadosCadastro = document.getElementById("dados-cadastro");
 const etapaSenha = document.getElementById("etapa-senha");
 const formCadastro = document.getElementById("form-cadastro");
 const campoCep = document.getElementById("cep");
+const btnVoltarSenha = document.getElementById("btn-voltar-senha");
+const campoSenha = document.getElementById("senha");
+
+const reqTamanho = document.getElementById("req-tamanho");
+const reqMaiuscula = document.getElementById("req-maiuscula");
+const reqNumero = document.getElementById("req-numero");
+const reqEspecial = document.getElementById("req-especial");
+const mensagem = document.getElementById("mensagem");
 
 campoCep.addEventListener("input", () => {
     const numeros = campoCep.value.replace(/[^0-9]/g, "").slice(0, 8);
@@ -14,10 +22,27 @@ campoCep.addEventListener("input", () => {
 });
 
 btnContinuar.addEventListener("click", async function () {
+    esconderMensagem();
+    
     const nome = document.getElementById("nome").value.trim();
     const sobrenome = document.getElementById("sobrenome").value.trim();
     const cep = document.getElementById("cep").value.trim();
     const email = document.getElementById("email").value.trim();
+
+   if (!nome || !sobrenome || !cep || !email) {
+        mostrarMensagem("Preencha todos os campos obrigatórios.");
+        return;
+    }
+
+    if (nome.length < 3) {
+        alert("O nome precisa ter pelo menos 3 caracteres.");
+        return;
+    }
+
+    if (sobrenome.length < 3) {
+        alert("O sobrenome precisa ter pelo menos 3 caracteres.");
+        return;
+    } 
 
     if (!nome || !sobrenome || !cep || !email) {
         alert("Preencha todos os campos obrigatórios.");
@@ -54,6 +79,12 @@ btnContinuar.addEventListener("click", async function () {
     etapaSenha.style.display = "flex";
 });
 
+btnVoltarSenha.addEventListener("click", function () {
+    etapaSenha.style.display = "none";
+    dadosCadastro.style.display = "block";
+});
+
+
 formCadastro.addEventListener("submit", async function (event) {
     event.preventDefault();
 
@@ -64,6 +95,16 @@ formCadastro.addEventListener("submit", async function (event) {
     const senha = document.getElementById("senha").value;
     const confirmarSenha =
         document.getElementById("confirmar-senha").value;
+
+     if (nome.length < 3) {
+    alert("O nome precisa ter pelo menos 3 caracteres.");
+    return;
+}
+
+if (sobrenome.length < 3) {
+    alert("O sobrenome precisa ter pelo menos 3 caracteres.");
+    return;
+}   
 
     if (senha !== confirmarSenha) {
         alert("As senhas não são iguais.");
@@ -104,5 +145,49 @@ formCadastro.addEventListener("submit", async function (event) {
         return;
     }
 
-    window.location.href = "confirmação-conta.html";
+    window.location.href = "aguardando-confirmacao.html";
 });
+
+campoSenha.addEventListener("input", () => {
+
+    const senha = campoSenha.value;
+
+    atualizarRequisito(reqTamanho, senha.length >= 8);
+
+    atualizarRequisito(reqMaiuscula, /[A-Z]/.test(senha));
+
+    atualizarRequisito(reqNumero, /[0-9]/.test(senha));
+
+    atualizarRequisito(reqEspecial, /[^A-Za-z0-9]/.test(senha));
+
+});
+function atualizarRequisito(item, valido){
+
+    if(valido){
+
+        item.textContent = "✅ " + item.textContent.replace("✅ ","").replace("❌ ","");
+
+        item.style.color = "#1B8F3A";
+
+    }else{
+
+        item.textContent = "❌ " + item.textContent.replace("✅ ","").replace("❌ ","");
+
+        item.style.color = "#B42318";
+
+    }
+
+}
+function mostrarMensagem(texto){
+
+    mensagem.textContent = texto;
+    mensagem.style.display = "block";
+
+}
+
+function esconderMensagem(){
+
+    mensagem.textContent = "";
+    mensagem.style.display = "none";
+
+} 
